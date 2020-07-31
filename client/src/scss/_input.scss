@@ -1,0 +1,51 @@
+.at-input{
+    input[type='password'],
+    input[type='text'],
+    input[type='email'],
+    input[type='date'],
+    select, textarea
+    {
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid $border;
+        color: $grey;
+        background-color: $bkg;
+        padding: 0.7em;
+        display: block;
+        width: 100%;
+        &:focus{
+            outline: 1px solid $focused-border;
+        }
+    }
+
+}
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+    background: $navy;
+    color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+    background: $bkg;
+    color: $navy;
+    border: 1px solid $navy;
+}
