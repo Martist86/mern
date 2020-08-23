@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { IAppState } from '../../reducers'
 
 interface IProps {
       isAuthenticated: boolean
@@ -15,12 +16,13 @@ const PrivateRoute = ({
   <Route
     {...rest}
     render={props =>
-      isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+      // isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+        <Component {...props} />
     }
   />
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: IAppState) => ({
   auth: state.auth
 });
 

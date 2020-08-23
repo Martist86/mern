@@ -25,7 +25,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstName,lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, companyName, companyDescription, tags, fopCode, address, logo } = req.body;
 
     try {
       let user = await User.findOne({ email });
@@ -37,10 +37,7 @@ router.post(
       }
 
       user = new User({
-        firstName,
-        lastName,
-        email,
-        password
+        firstName, lastName, email, password, companyName, companyDescription, tags, fopCode, address, logo
       });
 
       const salt = await bcrypt.genSalt(10);
@@ -64,7 +61,7 @@ router.post(
           res.status(201).json({
             token,
             success: true,
-            message: "User created!",
+            message: "User is created",
             errors: []
           });
         }
@@ -74,6 +71,46 @@ router.post(
       res.status(500).send('Server error');
     }
   }
+);
+router.put(
+    '/update-me',
+    [
+        check('email', 'Please include a valid email').isEmail()
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const { firstName, lastName, email, companyName, companyDescription, tags, fopCode, address, logo, id } = req.body;
+
+        try {
+            let user = await User.updateOne({id}, {
+                firstName,
+                lastName,
+                companyName,
+                companyDescription,
+                tags,
+                fopCode,
+                address,
+                logo,
+                email
+            });
+
+            if (user) {
+                res.status(201).json({
+                    user,
+                    success: true,
+                    message: "User is updated",
+                    errors: []
+                });
+            }
+        } catch (err) {
+            console.error(err.message);
+            res.status(500).send(err.message);
+        }
+    }
 );
 
 module.exports = router;

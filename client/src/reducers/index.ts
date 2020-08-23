@@ -20,7 +20,7 @@ export interface IProfile {
   repos: [],
   loading: true,
   error: {}
-};
+}
 
 export interface IAppState {
   profile: IProfile;

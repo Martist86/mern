@@ -8,14 +8,21 @@ import Input from "../Elements/Input";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    password2: ''
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      password2: '',
+      companyName: '',
+      companyDescription: '',
+      address: '',
+      tags: [],
+      fopCode: '',
+      logo: ''
+
   });
 
-  const { firstName,lastName, email, password, password2 } = formData;
+  const { firstName,lastName, email, password, password2, companyName, companyDescription, tags, fopCode, logo, address } = formData;
 
  const onChange = (name: string, value: string) => setFormData({ ...formData, [name]: value });
 
@@ -24,7 +31,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== password2) {
       setAlert(`${lclzStor.passwordsDoNotMatch}`, 'danger');
     } else {
-      register({ firstName,lastName, email, password });
+      register({ firstName, lastName, email, password, companyName, companyDescription, tags, fopCode, logo, address });
     }
   };
 
@@ -48,14 +55,54 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               value={firstName}
           />
         </div>
-        <div className='form-group'>
+          <div className='form-group'>
           <Input
               placeholder={lclzStor.lastName}
               onChange={onChange}
               name='lastName'
               value={lastName}              
           />
-        </div>
+          </div>
+          <div className='form-group'>
+              <Input
+                  placeholder={lclzStor.companyName}
+                  onChange={onChange}
+                  name='companyName'
+                  value={companyName}
+              />
+          </div>
+          <div className='form-group'>
+              <Input
+                  placeholder={lclzStor.companyDescription}
+                  onChange={onChange}
+                  name='companyDescription'
+                  value={companyDescription}
+              />
+          </div>
+          <div className='form-group'>
+              <Input
+                  placeholder={lclzStor.fopCode}
+                  onChange={onChange}
+                  name='fopCode'
+                  value={fopCode}
+              />
+          </div>
+          <div className='form-group'>
+              <Input
+                  placeholder={lclzStor.logo}
+                  onChange={onChange}
+                  name='logo'
+                  value={logo}
+              />
+          </div>
+          <div className='form-group'>
+              <Input
+                  placeholder={lclzStor.address}
+                  onChange={onChange}
+                  name='address'
+                  value={address}
+              />
+          </div>
         <div className='form-group'>
             <Input
                 placeholder={lclzStor.email}

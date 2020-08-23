@@ -10,8 +10,19 @@ let lclzStor: any = new LocalizedStrings({
         haveAnAccount: "Маєш аккаунт",
         passwordsDoNotMatch: "Паролі не однакові",
         register: "Зареєструватись",
-        makeAccount: "створити аккаунт"
-
+        makeAccount: "створити аккаунт",
+        companyName: "Назва компанії",
+        companyDescription: "Про компанію",
+        fopCode: "ЄРДПОУ",
+        address: "Адреса",
+        logo: "Лого",
+        save: "Зберегти",
+        emailValidation: "Введіть валідний імейл",
+        addTagsTitleOnProfile: "Теги, які вас цікавлять. Наприклад: #комбайн #ягуар #закарпаття",
+        addTagsDescriptionOnProfile: "Ви будете отримувати (чи вже отримуєте) повідомлення про тендери які будуть містити, такі теги. Щоб відмпсатись видаліть теги, які вас не цікавлять.",
+        logoProfileTitle: "Логотип вашої компанії",
+        editProfileTitle: "Редагувати профиль",
+        subscribeMeToAllTenders: "Хочу отримувати повідомлення про всі тендери"
     },
     "ru": {
         password: "Пароль",
@@ -23,8 +34,19 @@ let lclzStor: any = new LocalizedStrings({
         haveAnAccount: "Есть акаунт",
         passwordsDoNotMatch: "Пароли не одинаковые",
         register: "Зарегестрироваться",
-        makeAccount: "создать аккаунт"
-
+        makeAccount: "создать аккаунт",
+        companyName: "Название коммпании",
+        companyDescription: "О вашей компании",
+        fopCode: "ЄРДПОУ",
+        address: "Адрес",
+        logo: "Лого",
+        save: "Сохранить",
+        emailValidation: "Введите валидный имейл",
+        addTagsTitleOnProfile: "Теги, которые вас интересуют . Например: #удобрения #органика #киев",
+        addTagsDescriptionOnProfile: "Ви будете получать (или уже получаете) уведомления о тендерах которые будут содержать такие теги. Что бы отказаться удалите теги, которые вас не интерисуют",
+        logoProfileTitle: "Логотип вашей компаниий",
+        editProfileTitle: "Редактировать профиль",
+        subscribeMeToAllTenders: "Хочу получать уведомления о всех тендерах"
     }
 });
 export default lclzStor;

@@ -17,20 +17,18 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser());
+    store.dispatch(loadUser);
   }, []);
 
   return (
     <Provider store={store}>
-      <Router>
-        <>
+      <Router>       
           <Navbar />
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route component={Routes} />
-          </Switch>
-        </>
-      </Router>
+          </Switch>     
+      </Router>      
     </Provider>
   );
 };
