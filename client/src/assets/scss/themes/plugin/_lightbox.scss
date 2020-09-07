@@ -1,0 +1,19 @@
+.lb-cancel {
+    background: url("http://localhost:3000/images/loading.gif") no-repeat;
+}
+
+.lb-nav a.lb-prev {
+    background: url("http://localhost:3000/images/prev.png") left 48% no-repeat;
+}
+
+.lb-nav a.lb-next {
+    background: url("http://localhost:3000/images/next.png") right 48% no-repeat;
+}
+
+.lb-data .lb-caption a {
+    color: theme-color("primary");
+}
+
+.lb-data .lb-close {
+    background: url("http://localhost:3000/images/close.png") top right no-repeat;
+}
